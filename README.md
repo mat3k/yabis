@@ -1,4 +1,4 @@
-Yet another blogin in Sinatra
+Yet another blog in Sinatra
 =============================
 
 TODO
