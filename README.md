@@ -10,8 +10,8 @@ TODO
 - twitter and outside authentication
 - css framework (bootstrap or foundation)
 
-RUN
+INSTALL & RUN
 ---
-1. $ Git clone
-2. $ Bundle install
-3. $ rackup
+	$ Git clone
+	$ Bundle install
+	$ rackup
