@@ -1,0 +1,7 @@
+h2 = @post['title']
+p Comments:
+- @post['comments'].each do |comment|
+   = comment['author']
+   br
+   = comment['body']
+   hr

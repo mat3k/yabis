@@ -1,0 +1,16 @@
+h1 My blog
+- @posts.each do |post|
+    h2 
+      a href=("/post/" + post['permalink']) = post['title']
+    = post['date']
+    |  by 
+    i 
+      a href=(("/author/") + (post['author']) + ("/posts")) = post['author']
+    br
+    | Comments: 
+    a href=("/post/" + post['permalink'] + "/comments") = post['comments'].size
+    hr
+    == post['body']
+    p 
+      em Filed Under: 
+      b = post['tags']

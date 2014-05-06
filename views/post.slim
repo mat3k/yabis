@@ -1,0 +1,9 @@
+h2 
+  a href=("/post/" + @post['permalink']) = @post['title']
+= @post['date']
+|  by 
+i = @post['author']
+br
+a href=("/post/" + @post['permalink'] + "/comments") Comments
+hr
+== @post['body']
