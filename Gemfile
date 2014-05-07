@@ -5,4 +5,4 @@ gem 'mongo'
 gem 'slim'
 gem 'omniauth'
 gem 'omniauth-twitter'
-
+gem 'dotenv'

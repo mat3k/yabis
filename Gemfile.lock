@@ -2,6 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     bson (1.10.0)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
     hashie (2.1.1)
     mongo (1.10.0)
       bson (~> 1.10.0)
@@ -33,6 +36,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   mongo
   omniauth
   omniauth-twitter

@@ -1,15 +1,9 @@
-require 'sinatra'
-require 'slim'
-require 'omniauth-twitter'
-require 'mongo'
-require 'pp'
-
 include Mongo
 
 class Yabis < Sinatra::Application
 
   use OmniAuth::Builder do
-    provider :twitter, 'twitter_public_key', 'twitter_private key'
+    provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
   end
 
   helpers do
@@ -44,12 +38,10 @@ class Yabis < Sinatra::Application
 
   configure do
     enable :sessions
-    set :session, {}
-    #Rack::Session::Cookie, secret: "fc683cd9ed1990ca2ea10b84e5e6fba048c24929"
 
-    conn = MongoClient.new("localhost", 27017)
+    conn = MongoClient.new(ENV['MONGODB_HOST'], ENV['MONGODB_PORT'])
     set :mongo_connection, conn
-    set :db, conn.db('blog')
+    set :db, conn.db(ENV['MONGODB_DATABASE'])
   end
 
   get '/public' do
@@ -66,13 +58,9 @@ class Yabis < Sinatra::Application
   end
 
   get '/logout' do
-    session[:user_id] = nil
   end
 
   get '/auth/twitter/callback' do
-    params = {}
-    params['env'] = env
-    pp env['omniauth.auth']
   end
 
   get '/' do

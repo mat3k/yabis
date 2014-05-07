@@ -12,6 +12,6 @@ TODO
 
 INSTALL & RUN
 ---
-	$ Git clone
-	$ Bundle install
+	$ git clone
+	$ bundle install
 	$ rackup
