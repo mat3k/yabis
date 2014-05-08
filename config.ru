@@ -5,5 +5,7 @@ Bundler.require
 Dotenv.load
 
 require './app'
+require './routes'
+require './helpers'
 
 run Yabis.new
